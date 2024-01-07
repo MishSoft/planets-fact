@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Inter:wght@400;500&family=Space+Grotesk:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  font-family: "Antonio", sans-serif;
+  background-color: #070724;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  padding: 15px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #25255616;
+}
+
+.title {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -1.05px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 33px;
+}
+
+.drop-menu-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  right: 10px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.line {
+  width: 70%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 100px;
+}
+
+.planet-btns {
+  padding: 8px 13px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.planet {
+  display: flex;
+  align-items: center;
+}
+
+#solar {
+  width: 100%;
+  height: 100vh;
+}
+
+.planet-details {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#planetDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.planet-right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.planet-right-side h2 {
+  color: #fff;
+  font-size: 80px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.planet-right-side p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px; /* 178.571% */
+}
+
+.planet-right-side span {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.5;
+  font-weight: 400;
+  line-height: 25px; /* 178.571% */
+}
+
+.planet-right-side a {
+  text-decoration: none;
+  color: white;
+}
+
+.planet-details-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 30px;
+}
+
+.rotation-time,
+.revolution-time,
+.radius,
+.average-temp {
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 23px;
+  opacity: 0.2;
+}
+
+.rotation-time h3,
+.revolution-time h3,
+.radius h3,
+.average-temp h3 {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 25px; /* 227.273% */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.rotation-time h2,
+.revolution-time h2,
+.radius h2,
+.average-temp h2 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1050px) {
+  .drop-menu-btn {
+    display: flex;
+    transition: all 0.2s ease;
+  }
+
+  .navigation {
+    position: absolute;
+    background-color: #070724;
+    width: 400px;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0;
+    transition: all 0.2s ease;
+  }
+
+  .planet-btns {
+    width: 200px;
+    height: 50px;
+    border: 1px solid #fff;
+    transition: all 0.2s ease;
+  }
+
+  .planet-btns:hover {
+    background-color: #fff;
+    color: #262626;
+  }
+
+  .active-drop-menu-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    right: 10px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .active-drop-menu-btn .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-10%);
+  }
+
+  .active-drop-menu-btn .line:nth-child(2) {
+    display: none;
+  }
+
+  .active-drop-menu-btn .line:nth-child(3) {
+    transform: rotate(45deg) translate(-10%);
+  }
+
+  .navigation-active {
+    right: 0;
+  }
+}
