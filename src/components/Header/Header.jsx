@@ -1,15 +1,24 @@
 // import React from 'react'
 import { useState } from "react";
 import { motion } from "framer-motion";
-import NavBar from "./NavBar";
-
-function Header({ setSelectedPlanetIndo }) {
+import NavBar from "../NavBar/NavBar";
+import { Link } from "react-router-dom";
+// eslint-disable-next-line react/prop-types
+function Header({ setHandlePlanet }) {
   const [isNav, setisNav] = useState(false);
-
   return (
-    <header className="header">
-      <h1 className="title">the planets</h1>
-      <NavBar onSelectPlanet={setSelectedPlanetIndo} isNavActive={isNav} />
+    <motion.div
+      transition={{
+        ease: "linear",
+        duration: 2,
+        x: { duration: 1 },
+      }}
+      className="header"
+    >
+      <Link to="/" className="title">
+        the planets
+      </Link>
+      <NavBar onSelectPlanet={setHandlePlanet} isNavActive={isNav} />
       <motion.div
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.9 }}
@@ -21,7 +30,7 @@ function Header({ setSelectedPlanetIndo }) {
         <div className="line"></div>
         <div className="line"></div>
       </motion.div>
-    </header>
+    </motion.div>
   );
 }
 

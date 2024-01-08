@@ -1,49 +1,23 @@
 import { motion } from "framer-motion";
-
+// import { link } from "fs";
+import { Link } from "react-router-dom";
+import Planets from "../PlanetsData/Plaents";
 // eslint-disable-next-line react/prop-types
 function NavBar({ isNavActive, onSelectPlanet }) {
-  const planets = [
-    {
-      name: "mercury",
-      backgroundColor: "#419EBB",
-    },
-    {
-      name: "venus",
-      backgroundColor: "#EDA249",
-    },
-    {
-      name: "earth",
-      backgroundColor: "#6D2ED5",
-    },
-    {
-      name: "mars",
-      backgroundColor: "#D14C32",
-    },
-    {
-      name: "jupiter",
-      backgroundColor: "#D83A34",
-    },
-    {
-      name: "saturn",
-      backgroundColor: "#CD5120",
-    },
-    {
-      name: "uranus",
-      backgroundColor: "#1EC1A2",
-    },
-    {
-      name: "neptune",
-      backgroundColor: "#2D68F0",
-    },
-  ];
   return (
     <motion.nav
+      transition={{
+        ease: "linear",
+        duration: 2,
+        x: { duration: 1 },
+      }}
       className={`navigation ${isNavActive ? "navigation-active" : ""}`}
     >
-      {planets.map((item, id) => {
+      {Planets.map((item, id) => {
         return (
-          <button
-            onClick={() => onSelectPlanet({ name: item.name })}
+          <Link
+            to={item.link}
+            onClick={(e) => onSelectPlanet(e.target.innerText.toLowerCase())}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = item.backgroundColor;
               e.target.style.color = "white";
@@ -60,7 +34,7 @@ function NavBar({ isNavActive, onSelectPlanet }) {
             key={id}
           >
             {item.name}
-          </button>
+          </Link>
         );
       })}
     </motion.nav>

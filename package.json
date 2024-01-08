@@ -12,11 +12,14 @@
   "dependencies": {
     "@react-three/fiber": "^8.15.13",
     "@tweenjs/tween.js": "^21.0.0",
+    "cors-anywhere": "^0.4.4",
     "dat.gui": "^0.7.9",
     "framer-motion": "^10.17.9",
     "orbit-controls": "^1.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1",
+    "react-three-fiber": "^6.0.13",
     "three": "^0.160.0",
     "three-gltf-loader": "^1.111.0"
   },

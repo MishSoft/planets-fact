@@ -130,6 +130,6 @@ export default function ThreeScene() {
       window.removeEventListener("resize", handleResize);
     };
   }, []); // Empty dependency array ensures useEffect runs once after the initial render
-
+  
   return <div id="solar" />;
 }
